@@ -7,7 +7,17 @@ render()
 
 function render(){
     generateCardSet()
+    displayCards()
     console.log(cardSet)
+}
+
+function displayCards(){
+    cardSet
+    .forEach(card =>{
+        let cardNode = document.createElement('div')
+        cardNode.classList.add('cardUpsideDown')
+        gameBoard.appendChild(cardNode)
+    })
 }
 
 function generateCardSet(){
