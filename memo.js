@@ -34,34 +34,3 @@ function pickValue(){
         pickValue()
     }
 }
-
-
-// in case i would have another change of mind i will leave this stuff here for later
-
-// let cardSet = Array.from({ length: 4 }, item => Array.from({ length: 4 }, place => []))
-
-// renderCards()
-
-// function renderCards() {
-//     cardSet
-//         .forEach(line => {
-//             let i = 0
-//             line
-//                 .forEach(position => {
-//                     let cardNode = document.createElement('div')
-//                     cardNode.classList.add('cardUpsideDown')
-//                     cardNode.addEventListener('click', turnAround)
-//                     gameBoard.appendChild(cardNode)
-//                     cardNode.textContent = i + 1
-//                     i++
-//                 })
-//         })
-// }
-
-// function turnAround(event) {
-//     let card = event.target
-//     //card.textContent = 
-
-//     console.log(card)
-// }
-// // console.log(cardSet)
