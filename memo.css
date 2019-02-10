@@ -17,3 +17,12 @@
     height: 120px;
     border: 1px solid black;
 }
+
+.cardRightWay{
+    text-align: center;
+    background-color: lightgray;
+    margin: 20px;
+    width: 80px;
+    height: 120px;
+    border: 1px solid black;
+}

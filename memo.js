@@ -21,11 +21,19 @@ function displayCards(){
 }
 
 function generateCardSet(){
-    cardSet = Array.from({length:cards}, el => ['#', pickValue()[0]])
+    cardSet = Array.from({length:cards}, el => pickValue()[0])
 }
 
 function pickValue(){
-    return values.splice(0,1)
+    let range = values.length
+    pick = Math.round(Math.random() * range)
+    let value = values.splice(pick)
+    if (value !== undefined){
+        return value
+    }
+    else{
+        pickValue()
+    }
 }
 
 
