@@ -25,8 +25,7 @@ function generateCardSet(){
 }
 
 function pickValue(){
-    let range = values.length
-    pick = Math.round(Math.random() * range)
+    pick = Math.round(Math.random() * values.length)
     let value = values.splice(pick)
     if (value !== undefined){
         return value
