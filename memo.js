@@ -14,7 +14,7 @@ function render() {
     console.log(cardSet)
 }
 
-function templateArray(){
+function templateArray() {
     let array = Array.from(values)
     return array
 }
