@@ -1,5 +1,7 @@
 .container {
+    margin: 0 auto;
     border: 1px solid grey;
+    max-width: 600px;
 }
 
 .board {
