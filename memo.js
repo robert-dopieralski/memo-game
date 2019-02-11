@@ -23,7 +23,9 @@ function displayCards(){
         let cardNode = document.createElement('div')
         cardNode.classList.add('cardUpsideDown')
         cardNode.addEventListener('click', turnAround)
-        cardNode.textContent = card
+        let cardInnerText = document.createElement('p')
+        cardInnerText.textContent = card
+        cardNode.appendChild(cardInnerText)
         gameBoard.appendChild(cardNode)
     })
 }

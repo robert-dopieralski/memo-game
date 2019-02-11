@@ -21,7 +21,11 @@
     border: 1px solid black;
 }
 
-.cardRightWay{
+.cardUpsideDown p {
+    display: none;
+}
+
+.cardRightWay {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,4 +36,8 @@
     width: 80px;
     height: 120px;
     border: 1px solid black;
+}
+
+.cardRightWay p{
+    display: block;
 }
