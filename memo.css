@@ -38,3 +38,10 @@
     color: black;
     display: block;
 }
+
+.scoreBoard{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px; 
+    border: 1px inset grey;
+}

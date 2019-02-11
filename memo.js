@@ -4,19 +4,48 @@ const values = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]
 let cardSet
 let score = 0
 let choice
+let time = 0
+let timer
 
 render()
 
 function render() {
     choice = templateArray()
+    updateTime()
+    updateBestTime()
     generateCardSet()
     displayCards()
-    console.log(cardSet)
+    Timer()
 }
 
 function templateArray() {
-    let array = Array.from(values)
-    return array
+    return Array.from(values)
+}
+
+function Timer() {
+    timer = setInterval(clock, 1000)
+}
+
+function clock() {
+    time++
+    updateTime()
+}
+
+function updateBestTime() {
+    let bestTime = localStorage.getItem('bestTime')
+    let bestTimeNode = document.querySelector('.bestTime')
+    if (bestTime !== null) {
+        bestTimeNode.textContent = "The best time on this machine was: " + bestTime
+    }
+    if (bestTime === null) {
+        bestTimeNode.textContent = "No one finished this game on this machine so far :-) "
+    }
+
+}
+
+function updateTime() {
+    let clockNode = document.querySelector('.timer')
+    clockNode.textContent = "Time in seconds: " + time
 }
 
 function vanishPair() {
@@ -42,6 +71,13 @@ function checkIfEndOfTheGame() {
     let cards = document.querySelectorAll('.card')
     if (cards.length === 0) {
         render()
+        if (localStorage.getItem('bestTime') === null) {
+            localStorage.setItem('bestTime', time)
+        }
+        else if (localStorage.getItem('bestTime') > time) {
+            time = 0
+            clearInterval(timer)
+        }
     }
 }
 
