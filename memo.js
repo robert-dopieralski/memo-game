@@ -11,11 +11,19 @@ function render(){
     console.log(cardSet)
 }
 
+function turnAround(event){
+    let card = event.target
+    card.classList.toggle('cardUpsideDown')
+    card.classList.toggle('cardRightWay')
+}
+
 function displayCards(){
     cardSet
     .forEach(card =>{
         let cardNode = document.createElement('div')
         cardNode.classList.add('cardUpsideDown')
+        cardNode.addEventListener('click', turnAround)
+        cardNode.textContent = card
         gameBoard.appendChild(cardNode)
     })
 }
